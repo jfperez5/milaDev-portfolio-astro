@@ -1,0 +1,8 @@
+
+@import "tailwindcss";
+
+@theme{
+    --breakpoint-xs: 17.5rem;
+    --breakpoint-xxs: 25rem;
+    --color-context: 'var(--context-color)'
+}

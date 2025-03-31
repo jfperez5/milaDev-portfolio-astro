@@ -1,22 +1,42 @@
+---
+	import '@/styles/global.css'
+	interface Prop {
+		title:String;
+		description:String;
+	}
+
+	const {title, descrption } =Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="description" content={descrption} />
 		<meta name="viewport" content="width=device-width" />
+
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+
+		<!--=============== BoxIcons ===============-->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"	 />
+
+		<title>{title}</title>
+
+		<!--=============== Email JS ===============-->
+		<script type="text/javascript"  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" ></script>
+		<script type="text/javascript"> emailjs.init('Zy7aUsKbfBplaYqrE'); </script>
+	    
+		<!--=============== View Transition ===============-->
+		 <!-- <ViewTransitions />   -->
+	
 	</head>
-	<body>
+	<body class="bg-black text-white">
 		<slot />
+		<script src="@/assets/index.js"></script>
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<!-- <style is:global>
+	
+</style> -->
